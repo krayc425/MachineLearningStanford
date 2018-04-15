@@ -12,6 +12,8 @@
 \maketitle
 \tableofcontents
 
+\newpage
+
 \section{Lecture 1}
 
 \subsection{What is Machine Learning?}
@@ -63,6 +65,8 @@ Clustering: Take a collection of 1,000,000 different genes, and find a way to au
 
 Non-clustering: The ``Cocktail Party Algorithm", allows you to find structure in a chaotic environment. (i.e. identifying individual voices and music from a mesh of sounds at a cocktail party).
 
+\newpage
+
 \section{Lecture 2}
 
 \subsection{Model Representation}
@@ -71,7 +75,7 @@ To establish notation for future use, we will use $x^{(i)}$ to denote the ``inpu
 
 To describe the supervised learning problem slightly more formally, our goal is, given a training set, to learn a function $h$: $X \to Y$ so that $h(x)$ is a ``good'' predictor for the corresponding value of $y$. For historical reasons, this function $h$ is called a hypothesis. Seen pictorially, the process is therefore like this:
 
-\includegraphics[width = .8\textwidth]{NotePics/2_1_1.png}
+\includegraphics[width = \textwidth]{NotePics/2_1_1.png}
 
 When the target variable that we are trying to predict is continuous, such as in our housing example, we call the learning problem a regression problem. When $y$ can take on only a small number of discrete values (such as if, given the living area, we wanted to predict if a dwelling is a house or an apartment, say), we call it a classification problem.
 
@@ -85,7 +89,7 @@ To break it apart, it is $\frac{1}{2}\bar{x}$ where $\bar{x}$ is the mean of the
 
 This function is otherwise called the ``Squared error function'', or ``Mean squared error". The mean is halved ($\frac{1}{2}$) as a convenience for the computation of the gradient descent, as the derivative term of the square function will cancel out the $\frac{1}{2}$ term. The following image summarizes what the cost function does:
 
-\includegraphics[width = .8\textwidth]{NotePics/2_2_1.png}
+\includegraphics[width = \textwidth]{NotePics/2_2_1.png}
 
 \subsubsection{Cost Function - Intuition I}
 
@@ -93,15 +97,15 @@ If we try to think of it in visual terms, our training data set is scattered on 
 
 Our objective is to get the best possible line. The best possible line will be such so that the average squared vertical distances of the scattered points from the line will be the least. Ideally, the line should pass through all the points of our training data set. In such a case, the value of $J(\theta_0,\theta_1)$ will be 0. The following example shows the ideal situation where we have a cost function of 0.
 
-\includegraphics[width = .8\textwidth]{NotePics/2_2_1_1.png}
+\includegraphics[width = \textwidth]{NotePics/2_2_1_1.png}
 
 When $\theta_1=1$, we get a slope of 1 which goes through every single data point in our model. Conversely, when $\theta_1=0.5$, we see the vertical distance from our fit to the data points increase.
 
-\includegraphics[width = .8\textwidth]{NotePics/2_2_1_2.png}
+\includegraphics[width = \textwidth]{NotePics/2_2_1_2.png}
 
 This increases our cost function to 0.58. Plotting several other points yields to the following graph:
 
-\includegraphics[width = .8\textwidth]{NotePics/2_2_1_3.png}
+\includegraphics[width = \textwidth]{NotePics/2_2_1_3.png}
 
 Thus as a goal, we should try to minimize the cost function. In this case, $\theta_1=1$ is our global minimum.
 
@@ -109,15 +113,15 @@ Thus as a goal, we should try to minimize the cost function. In this case, $\the
 
 A contour plot is a graph that contains many contour lines. A contour line of a two variable function has a constant value at all points of the same line. An example of such a graph is the one to the right below.
 
-\includegraphics[width = .8\textwidth]{NotePics/2_2_2_1.png}
+\includegraphics[width = \textwidth]{NotePics/2_2_2_1.png}
 
 Taking any color and going along the `circle', one would expect to get the same value of the cost function. For example, the three green points found on the green line above have the same value for $J(\theta_0,\theta_1)$ and as a result, they are found along the same line. The circled x displays the value of the cost function for the graph on the left when $\theta_0 = 800$ and $\theta_1= -0.15$. Taking another $h(x)$ and plotting its contour plot, one gets the following graphs:
 
-\includegraphics[width = .8\textwidth]{NotePics/2_2_2_2.png}
+\includegraphics[width = \textwidth]{NotePics/2_2_2_2.png}
 
 When $\theta_0 = 360$ and $\theta_1 = 0$, the value of $J(\theta_0,\theta_1)$ in the contour plot gets closer to the center thus reducing the cost function error. Now giving our hypothesis function a slightly positive slope results in a better fit of the data.
 
-\includegraphics[width = .8\textwidth]{NotePics/2_2_2_3.png}
+\includegraphics[width = \textwidth]{NotePics/2_2_2_3.png}
 
 The graph above minimizes the cost function as much as possible and consequently, the result of $\theta_1$ and $\theta_0$ tend to be around 0.12 and 250 respectively. Plotting those values on our graph to the right seems to put our point in the center of the inner most `circle'.
 
@@ -129,7 +133,7 @@ Imagine that we graph our hypothesis function based on its fields $\theta_0$ and
 
 We put $\theta_0$ on the $x$ axis and $\theta_1$ on the $y$ axis, with the cost function on the vertical $z$ axis. The points on our graph will be the result of the cost function using our hypothesis with those specific theta parameters. The graph below depicts such a setup.
 
-\includegraphics[width = .8\textwidth]{NotePics/2_3_1.png}
+\includegraphics[width = \textwidth]{NotePics/2_3_1.png}
 
 We will know that we have succeeded when our cost function is at the very bottom of the pits in our graph, i.e. when its value is the minimum. The red arrows show the minimum points in the graph.
 
@@ -147,7 +151,7 @@ where $j=0,1$ represents the feature index number.
 
 At each iteration $j$, one should simultaneously update the parameters $\theta_1,\theta_2,...,\theta_n$. Updating a specific parameter prior to calculating another one on the $j$(th) iteration would yield to a wrong implementation.
 
-\includegraphics[width = .8\textwidth]{NotePics/2_3_2.png}
+\includegraphics[width = \textwidth]{NotePics/2_3_2.png}
 
 \subsubsection{Gradient Descent Intuition}
 
@@ -159,11 +163,11 @@ In this video we explored the scenario where we used one parameter $\theta_1$ an
 
 Regardless of the slope's sign for $\frac{dJ(\theta_1)}{d\theta_1}$, $\theta_1$ eventually converges to its minimum value. The following graph shows that when the slope is negative, the value of $\theta_1$ increases and when it is positive, the value of $\theta_1$ decreases.
 
-\includegraphics[width = .8\textwidth]{NotePics/2_3_1_1.png}
+\includegraphics[width = \textwidth]{NotePics/2_3_1_1.png}
 
 On a side note, we should adjust our parameter $\alpha$ to ensure that the gradient descent algorithm converges in a reasonable time. Failure to converge or too much time to obtain the minimum value imply that our step size is wrong.
 
-\includegraphics[width = .8\textwidth]{NotePics/2_3_1_2.png}
+\includegraphics[width = \textwidth]{NotePics/2_3_1_2.png}
 
 How does gradient descent converge with a fixed step size $\alpha$?
 
@@ -171,7 +175,7 @@ The intuition behind the convergence is that $\frac{dJ(\theta_1)}{d\theta_1}$ ap
 
 \[ \theta_1:=\theta_1-a*0 \]
 
-\includegraphics[width = .8\textwidth]{NotePics/2_3_1_3.png}
+\includegraphics[width = \textwidth]{NotePics/2_3_1_3.png}
 
 \subsubsection{Gradient Descent For Linear Regression}
 
@@ -187,15 +191,17 @@ where $m$ is the size of the training set, $\theta_0$ a constant that will be ch
 
 Note that we have separated out the two cases for $\theta_j$ into separate equations for $\theta_0$ and $\theta_1$; and that for $\theta_1$ we are multiplying $x_{i}$ at the end due to the derivative. The following is a derivation of $\frac{\partial J(\theta)}{\partial \theta_j}$ for a single example :
 
-\includegraphics[width = .8\textwidth]{NotePics/2_3_2_1.png}
+\includegraphics[width = \textwidth]{NotePics/2_3_2_1.png}
 
 The point of all this is that if we start with a guess for our hypothesis and then repeatedly apply these gradient descent equations, our hypothesis will become more and more accurate.
 
 So, this is simply gradient descent on the original cost function $J$. This method looks at every example in the entire training set on every step, and is called batch gradient descent. Note that, while gradient descent can be susceptible to local minima in general, the optimization problem we have posed here for linear regression has only one global, and no other local, optima; thus gradient descent always converges (assuming the learning rate $\alpha$ is not too large) to the global minimum. Indeed, $J$ is a convex quadratic function. Here is an example of gradient descent as it is run to minimize a quadratic function.
 
-\includegraphics[width = .8\textwidth]{NotePics/2_3_2_2.png}
+\includegraphics[width = \textwidth]{NotePics/2_3_2_2.png}
 
 The ellipses shown above are the contours of a quadratic function. Also shown is the trajectory taken by gradient descent, which was initialized at (48,30). The $x$'s in the figure (joined by straight lines) mark the successive values of $\theta$ that gradient descent went through as it converged to its minimum.
+
+\newpage
 
 \section{Lecture 3 (Optional)}
 
@@ -300,6 +306,8 @@ In other words:
 
 $A_{ij}=A^T_{ji}$
 
+\newpage
+
 \section{Lecture 4}
 
 \subsection{Multiple Features}
@@ -347,7 +355,7 @@ In other words:
 
 The following image compares gradient descent with one variable to gradient descent with multiple variables:
 
-\includegraphics[width = .8\textwidth]{NotePics/4_2_1.png}
+\includegraphics[width = \textwidth]{NotePics/4_2_1.png}
 
 \subsubsection{Gradient Descent in Practice I - Feature Scaling}
 
@@ -381,11 +389,11 @@ For example, if $x_i$ represents housing prices with a range of 100 to 2000 and 
 
 \paragraph{Automatic convergence test} Declare convergence if $J(\theta)$ decreases by less than $E$ in one iteration, where $E$ is some small value such as $10^{-3}$. However in practice it's difficult to choose this threshold value.
 
-\includegraphics[width = .8\textwidth]{NotePics/4_2_2_1.png}
+\includegraphics[width = \textwidth]{NotePics/4_2_2_1.png}
 
 It has been proven that if learning rate $\alpha$ is sufficiently small, then $J(\theta)$ will decrease on every iteration.
 
-\includegraphics[width = .8\textwidth]{NotePics/4_2_2_2.png}
+\includegraphics[width = \textwidth]{NotePics/4_2_2_2.png}
 
 To summarize:
 
@@ -421,7 +429,7 @@ Gradient descent gives one way of minimizing $J$. Let's discuss a second way of 
 
 \[ \theta = (X^T X)^{-1}X^T y \]
 
-\includegraphics[width = .8\textwidth]{NotePics/4_4_1.png}
+\includegraphics[width = \textwidth]{NotePics/4_4_1.png}
 
 There is no need to do feature scaling with the normal equation.
 
@@ -457,6 +465,8 @@ Solutions to the above problems include deleting a feature that is linearly depe
 
 \section{Lecture 5 (Omitted)}
 
+\newpage
+
 \section{Lecture 6}
 
 \subsection{Classification}
@@ -479,7 +489,7 @@ Our new form uses the ``Sigmoid Function", also called the ``Logistic Function":
 
 The following image shows us what the sigmoid function looks like:
 
-\includegraphics[width = .8\textwidth]{NotePics/6_2_1.png}
+\includegraphics[width = \textwidth]{NotePics/6_2_1.png}
 
 The function $g(z)$, shown here, maps any real number to the (0, 1) interval, making it useful for transforming an arbitrary-valued function into a function better suited for classification.
 
@@ -546,11 +556,11 @@ Instead, our cost function for logistic regression looks like:
 
 When $y = 1$, we get the following plot for $J(\theta)$ vs $h_\theta(x)$:
 
-\includegraphics[width = .8\textwidth]{NotePics/6_4_1.png}
+\includegraphics[width = \textwidth]{NotePics/6_4_1.png}
 
 Similarly, when $y = 0$, we get the following plot for $J(\theta)$ vs $h_\theta(x)$:
 
-\includegraphics[width = .8\textwidth]{NotePics/6_4_2.png}
+\includegraphics[width = \textwidth]{NotePics/6_4_2.png}
 
 \[ \mathrm{Cost}(h_\theta(x),y) = 0 \text{ if } h_\theta(x) = y \]
 
@@ -649,7 +659,7 @@ We are basically choosing one class and then lumping all the others into a singl
 
 The following image shows how one could classify 3 classes:
 
-\includegraphics[width = .8\textwidth]{NotePics/6_7_1.png}
+\includegraphics[width = \textwidth]{NotePics/6_7_1.png}
 
 \paragraph{To summarize}
 
@@ -657,13 +667,15 @@ Train a logistic regression classifier $h_\theta(x)$ for each class to predict t
 
 To make a prediction on a new $x$, pick the class that maximizes $h_\theta (x)$.
 
+\newpage
+
 \section{Lecture 7}
 
 \subsection{The Problem of Overfitting}
 
 Consider the problem of predicting $y$ from $x \in R$. The leftmost figure below shows the result of fitting a $y = \theta_0+\theta_1x$ to a dataset. We see that the data doesn?t really lie on straight line, and so the fit is not very good.
 
-\includegraphics[width = .8\textwidth]{NotePics/7_1_1.png}
+\includegraphics[width = \textwidth]{NotePics/7_1_1.png}
 
 Instead, if we had added an extra feature $x_2$ , and fit $y = \theta_0+\theta_1x+\theta_2x^2$ , then we obtain a slightly better fit to the data (See middle figure). Naively, it might seem that the more features we add, the better. However, there is also a danger in adding too many features: The rightmost figure is the result of fitting a $5^{th}$ order polynomial $y = \sum_{j=0} ^5 \theta_j x^j$. We see that even though the fitted curve passes through the data perfectly, we would not expect this to be a very good predictor of, say, housing prices ($y$) for different living areas ($x$). Without formally defining what these terms mean, we?ll say the figure on the left shows an instance of underfitting?in which the data clearly shows structure not captured by the model?and the figure on the right is an example of overfitting.
 
@@ -697,7 +709,7 @@ We'll want to eliminate the influence of $\theta_3x^3$ and $\theta_4x^4$ . Witho
 
 We've added two extra terms at the end to inflate the cost of $\theta_3$ and $\theta_4$. Now, in order for the cost function to get close to zero, we will have to reduce the values of $\theta_3$ and $\theta_4$ to near zero. This will in turn greatly reduce the values of $\theta_3x^3$ and $\theta_4x^4$ in our hypothesis function. As a result, we see that the new hypothesis (depicted by the pink curve) looks like a quadratic function but fits the data better due to the extra small terms $\theta_3x^3$ and $\theta_4x^4$.
 
-\includegraphics[width = .8\textwidth]{NotePics/7_2_1.png}
+\includegraphics[width = \textwidth]{NotePics/7_2_1.png}
 
 We could also regularize all of our theta parameters in a single summation as:
 
@@ -747,7 +759,7 @@ Recall that if $m < n$, then $X^TX$ is non-invertible. However, when we add the 
 
 We can regularize logistic regression in a similar way that we regularize linear regression. As a result, we can avoid overfitting. The following image shows how the regularized function, displayed by the pink line, is less likely to overfit than the non-regularized function represented by the blue line:
 
-\includegraphics[width = .8\textwidth]{NotePics/7_4_1.png}
+\includegraphics[width = \textwidth]{NotePics/7_4_1.png}
 
 \paragraph{Cost Function}
 
@@ -763,7 +775,9 @@ We can regularize this equation by adding a term to the end:
 
 The second sum, $\sum_{j=1}^n \theta_j^2$ means to explicitly exclude the bias term, $\theta_0$. I.e. the $\theta$ vector is indexed from 0 to $n$ (holding $n+1$ values, $\theta_0$ through $\theta_n$), and this sum explicitly skips $\theta_0$, by running from 1 to $n$, skipping 0. Thus, when computing the equation, we should continuously update the two following equations:
 
-\includegraphics[width = .8\textwidth]{NotePics/7_4_2.png}
+\includegraphics[width = \textwidth]{NotePics/7_4_2.png}
+
+\newpage
 
 \section{Lecture 8}
 
@@ -804,7 +818,7 @@ The dimensions of these matrices of weights is determined as follows:
 If network has $s_j$ units in layer $j$ and $s_{j+1}$ units in layer $j+1$, then $\Theta^{(j)}$ will be of dimension $s_{j+1}*(s_j+1)$.
 The +1 comes from the addition in $\Theta^{(j)}$ of the ``bias nodes," $x_0$ and $\Theta^{(j)}_0$. In other words the output nodes will not include the bias nodes while the inputs will. The following image summarizes our model representation:
 
-\includegraphics[width = .8\textwidth]{NotePics/8_1_1.png}
+\includegraphics[width = \textwidth]{NotePics/8_1_1.png}
 
 \paragraph{Example} If layer 1 has 2 input nodes and layer 2 has 4 activation nodes. Dimension of $\Theta^{(1)}$ is going to be $4*3$ where $s_j=2$ and $s_{j+1}=4$, so $s_{j+1}*(s_j+1)=4*3$.
 
@@ -876,11 +890,11 @@ This will cause the output of our hypothesis to only be positive if both $x_1$ a
 
 So we have constructed one of the fundamental operations in computers by using a small neural network rather than using an actual AND gate. Neural networks can also be used to simulate all the other logical gates. The following is an example of the logical operator `OR', meaning either $x_1$ is true or $x_2$ is true, or both:
 
-\includegraphics[width = .8\textwidth]{NotePics/8_3_1.png}
+\includegraphics[width = \textwidth]{NotePics/8_3_1.png}
 
 Where $g(z)$ is the following:
 
-\includegraphics[width = .8\textwidth]{NotePics/8_3_2.png}
+\includegraphics[width = \textwidth]{NotePics/8_3_2.png}
 
 \subsection{Examples and Intuitions II}
 
@@ -908,13 +922,13 @@ $$a^{(2)} = g(\Theta^{(1)} \cdot x) \\ a^{(3)} = g(\Theta^{(2)} \cdot a^{(2)}) \
 
 And there we have the XNOR operator using a hidden layer with two nodes! The following summarizes the above algorithm:
 
-\includegraphics[width = .8\textwidth]{NotePics/8_4_1.png}
+\includegraphics[width = \textwidth]{NotePics/8_4_1.png}
 
 \subsection{Multiclass Classification}
 
 To classify data into multiple classes, we let our hypothesis function return a vector of values. Say we wanted to classify our data into one of four categories. We will use the following example to see how this classification is done. This algorithm takes as input an image and classifies it accordingly:
 
-\includegraphics[width = .8\textwidth]{NotePics/8_5_1.png}
+\includegraphics[width = \textwidth]{NotePics/8_5_1.png}
 
 We can define our set of resulting classes as $y$:
 
@@ -929,6 +943,8 @@ Our resulting hypothesis for one set of inputs may look like:
 $$h_\Theta(x) =\begin{bmatrix}0 \\ 0 \\ 1 \\ 0 \\\end{bmatrix}$$
 
 In which case our resulting class is the third one down, or $h_\Theta(x)_3$, which represents the motorcycle.
+
+\newpage
 
 \section{Lecture 9}
 
@@ -972,7 +988,7 @@ That is, we want to minimize our cost function $J$ using an optimal set of param
 
 \[\dfrac{\partial}{\partial \Theta_{i,j}^{(l)}}J(\Theta)\]
 
-\includegraphics[width = .8\textwidth]{NotePics/9_2_1.png}
+\includegraphics[width = \textwidth]{NotePics/9_2_1.png}
 
 \paragraph{Back propagation Algorithm}
 
@@ -985,7 +1001,7 @@ For training example $t =1$ to $m$:
 \paragraph{1.} Set $a^{(1)}:=x^{(t)}$
 \paragraph{2.} Perform forward propagation to compute $a^{(l)}$ for $l = 2,3,\cdots,L$
 
-\includegraphics[width = .8\textwidth]{NotePics/9_2_2.png}
+\includegraphics[width = \textwidth]{NotePics/9_2_2.png}
 
 \paragraph{3.} Using $y^{(t)}$, compute $\delta^{(L)} = a^{(L)} - y^{(t)}$
 
@@ -1029,7 +1045,7 @@ Intuitively, $\delta^{(l)}_j$ is the ``error" for $a^{(l)}_j$ (unit $j$ in layer
 
 Recall that our derivative is the slope of a line tangent to the cost function, so the steeper the slope the more incorrect we are. Let us consider the following neural network below and see how we could calculate some $\delta^{(l)}_j$:
 
-\includegraphics[width = .8\textwidth]{NotePics/9_3_1.png}
+\includegraphics[width = \textwidth]{NotePics/9_3_1.png}
 
 In the image above, to calculate $\delta^{(2)}_2$, we multiply the weights $\Theta_{12}^{(2)}$ and $\Theta_{22}^{(2)}$ by their respective $\delta$ values found to the right of each edge. So we get $\delta_2^{(2)}=\Theta_{12}^{(2)}*\delta^{(3)}_1+\Theta_{22}^{(2)}*\delta^{(3)}_2$. To calculate every single possible $\delta^{(l)}_j$, we could start from the right of our diagram. We can think of our edges as our $\Theta_{ij}$. Going from right to left, to calculate the value of $\delta^{(l)}_j$, you can just take the over all sum of each weight times the $\delta$ it is coming from. Hence, another example would be $\delta_2^{(3)}=\Theta_{12}^{(3)}*\delta^{(4)}_1$.
 
@@ -1057,7 +1073,7 @@ Theta3 = reshape(thetaVector(221:231),1,11)
 
 To summarize:
 
-\includegraphics[width = .8\textwidth]{NotePics/9_4_1.png}
+\includegraphics[width = \textwidth]{NotePics/9_4_1.png}
 
 \subsection{Gradient Checking}
 
@@ -1092,7 +1108,7 @@ Once you have verified $\textbf{once}$ that your backpropagation algorithm is co
 
 Initializing all theta weights to zero does not work with neural networks. When we backpropagate, all nodes will update to the same value repeatedly. Instead we can randomly initialize our weights for our $\Theta$ matrices using the following method:
 
-\includegraphics[width = .8\textwidth]{NotePics/9_6_1.png}
+\includegraphics[width = \textwidth]{NotePics/9_6_1.png}
 
 Hence, we initialize each $\Theta^{(l)}_{ij}$ to a random value between $[-\epsilon,\epsilon]$. Using the above formula guarantees that we get the desired bound. The same procedure applies to all the $\Theta$'s. Below is some working code you could use to experiment.
 
@@ -1121,12 +1137,14 @@ First, pick a network architecture; choose the layout of your neural network, in
 
 \paragraph{Training a Neural Network}
 
-\paragraph{1.} Randomly initialize the weights
-\paragraph{2.} Implement forward propagation to get $h_\Theta(x^{(i)})$ for any $x^{(i)}$
-\paragraph{3.} Implement the cost function
-\paragraph{4.} Implement backpropagation to compute partial derivatives
-\paragraph{5.} Use gradient checking to confirm that your backpropagation works. Then disable gradient checking.
-\paragraph{6.} Use gradient descent or a built-in optimization function to minimize the cost function with the weights in theta.
+\begin{itemize}
+\item[{1.}]Randomly initialize the weights
+\item[{2.}]Implement forward propagation to get $h_\Theta(x^{(i)})$ for any $x^{(i)}$
+\item[{3.}]Implement the cost function
+\item[{4.}]Implement backpropagation to compute partial derivatives
+\item[{5.}]Use gradient checking to confirm that your backpropagation works. Then disable gradient checking.
+\item[{6.}]Use gradient descent or a built-in optimization function to minimize the cost function with the weights in theta.
+\end{itemize}
 
 When we perform forward and back propagation, we loop on every training example:
 
@@ -1138,8 +1156,203 @@ for i = 1:m,
 
 The following image gives us an intuition of what is happening as we are implementing our neural network:
 
-\includegraphics[width = .8\textwidth]{NotePics/9_7_1.png}
+\includegraphics[width = \textwidth]{NotePics/9_7_1.png}
 
 Ideally, you want $h_\Theta(x^{(i)}) \approx y^{(i)}$. This will minimize our cost function. However, keep in mind that $J(\Theta)$ is not convex and thus we can end up in a local minimum instead.
+
+\newpage
+
+\section{Lecture 10}
+
+\subsection{Evaluating a Hypothesis}
+
+Once we have done some trouble shooting for errors in our predictions by:
+
+\begin{itemize}
+\item[$\cdot$]Getting more training examples
+\item[$\cdot$]Trying smaller sets of features
+\item[$\cdot$]Trying additional features
+\item[$\cdot$]Trying polynomial features
+\item[$\cdot$]Increasing or decreasing $\lambda$
+\end{itemize}
+
+We can move on to evaluate our new hypothesis.
+
+A hypothesis may have a low error for the training examples but still be inaccurate (because of overfitting). Thus, to evaluate a hypothesis, given a dataset of training examples, we can split up the data into two sets: a $\textbf{training set}$ and a $\textbf{test set}$. Typically, the training set consists of $70\%$ of your data and the test set is the remaining $30\%$.
+
+The new procedure using these two sets is then:
+
+\begin{itemize}
+\item[{1.}]Learn $\Theta$ and minimize $J_{train}(\Theta)$ using the training set
+\item[{2.}]Compute the test set error $J_{test}(\Theta)$
+\end{itemize}
+
+\paragraph{The test set error}
+
+\begin{itemize}
+\item[{1.}]For linear regression: $J_{test}(\Theta) = \dfrac{1}{2m_{test}} \sum_{i=1}^{m_{test}}(h_\Theta(x^{(i)}_{test}) - y^{(i)}_{test})^2$
+\item[{2.}]For classification ~ Misclassification error (aka 0/1 misclassification error):
+\[err(h_\Theta(x),y) = \begin{matrix} 1 & \mbox{if } h_\Theta(x) \geq 0.5\ and\ y = 0\ or\ h_\Theta(x) < 0.5\ and\ y = 1\\ 0 & \mbox otherwise \end{matrix}\]
+\end{itemize}
+
+This gives us a binary 0 or 1 error result based on a misclassification. The average test error for the test set is:
+
+$\text{Test Error} = \dfrac{1}{m_{test}} \sum^{m_{test}}_{i=1} err(h_\Theta(x^{(i)}_{test}), y^{(i)}_{test})$
+
+This gives us the proportion of the test data that was misclassified.
+
+\subsection{Model Selection and Train/Validation/Test Sets}
+
+Just because a learning algorithm fits a training set well, that does not mean it is a good hypothesis. It could over fit and as a result your predictions on the test set would be poor. The error of your hypothesis as measured on the data set with which you trained the parameters will be lower than the error on any other data set.
+
+Given many models with different polynomial degrees, we can use a systematic approach to identify the `best' function. In order to choose the model of your hypothesis, you can test each degree of polynomial and look at the error result.
+
+One way to break down our dataset into the three sets is:
+
+\begin{itemize}
+\item[$\cdot$]Training set: $60\%$
+\item[$\cdot$]Cross validation set: $20\%$
+\item[$\cdot$]Test set: $20\%$
+\end{itemize}
+
+We can now calculate three separate error values for the three different sets using the following method:
+
+\begin{itemize}
+\item[{1.}]Optimize the parameters in $\Theta$ using the training set for each polynomial degree.
+\item[{2.}]Find the polynomial degree $d$ with the least error using the cross validation set.
+\item[{3.}]Estimate the generalization error using the test set with $J_\text{test}(\Theta^{(d)})$, ($d$ = theta from polynomial with lower error).
+\end{itemize}
+
+This way, the degree of the polynomial $d$ has not been trained using the test set.
+
+\subsection{Diagnosing Bias vs. Variance}
+
+In this section we examine the relationship between the degree of the polynomial d and the underfitting or overfitting of our hypothesis.
+
+\begin{itemize}
+\item[$\cdot$]We need to distinguish whether $\textbf{bias}$ or $\textbf{variance}$ is the problem contributing to bad predictions.
+\item[$\cdot$]High bias is underfitting and high variance is overfitting. Ideally, we need to find a golden mean between these two.
+\end{itemize}
+
+The training error will tend to $\textbf{decrease}$ as we increase the degree $d$ of the polynomial.
+
+At the same time, the cross validation error will tend to $\textbf{decrease}$ as we increase $d$ up to a point, and then it will $\textbf{increase}$ as $d$ is increased, forming a convex curve.
+
+\paragraph{High bias (underfitting)} both $J_\text{train}(\Theta)$ and $J_\text{cv}(\Theta)$ will be high. Also, $J_\text{cv}(\Theta)  \approx J_\text{train}(\Theta)$.
+\paragraph{High variance (overfitting)} $J_\text{train}(\Theta)$ will be low and $J_\text{cv}(\Theta)$ will be much greater than $J_\text{train}(\Theta)$.
+
+The is summarized in the figure below:
+
+\includegraphics[width = \textwidth]{NotePics/10_3_1.png}
+
+\subsection{Regularization and Bias/Variance}
+
+\includegraphics[width = \textwidth]{NotePics/10_4_1.png}
+
+In the figure above, we see that as $\lambda$ increases, our fit becomes more rigid. On the other hand, as $\lambda$ approaches 0, we tend to over overfit the data. So how do we choose our parameter $\lambda$ to get it `just right' ? In order to choose the model and the regularization term $\lambda$, we need to:
+
+\begin{itemize}
+\item[{1.}]Create a list of lambdas (i.e. $\lambda\in\{0,0.01,0.02,0.04,0.08,0.16,0.32,0.64,1.28,2.56,5.12,10.24\}$);
+\item[{2.}]Create a set of models with different degrees or any other variants.
+\item[{3.}]Iterate through the $\lambda$s and for each $\lambda$ go through all the models to learn some $\Theta$.
+\item[{4.}]Compute the cross validation error using the learned $\Theta$ (computed with $\lambda$) on the $J_\text{cv}(\Theta)$ without regularization or $\lambda = 0$.
+\item[{5.}]Select the best combo that produces the lowest error on the cross validation set.
+\item[{6.}]Using the best combo $\Theta$ and $\lambda$, apply it on $J_\text{test}(\Theta)$ to see if it has a good generalization of the problem.
+\end{itemize}
+
+\subsection{Learning Curves}
+
+Training an algorithm on a very few number of data points (such as 1, 2 or 3) will easily have 0 errors because we can always find a quadratic curve that touches exactly those number of points. Hence:
+
+\begin{itemize}
+\item[$\cdot$]As the training set gets larger, the error for a quadratic function increases.
+\item[$\cdot$]The error value will plateau out after a certain m, or training set size.
+\end{itemize}
+
+\paragraph{Experiencing high bias}
+
+\paragraph{Low training set size} causes $J_\text{train}(\Theta)$ to be low and $J_{cv}(\Theta)$ to be high.
+\paragraph{Large training set size} causes both $J_\text{train}(\Theta)$ and $J_{cv}(\Theta)$ to be high with $J_\text{train}(\Theta) \approx J_{cv}(\Theta)$.
+
+If a learning algorithm is suffering from $\textbf{high}$ bias, getting more training data will not $\textbf{(by itself)}$ help much.
+
+\includegraphics[width = \textwidth]{NotePics/10_5_1.png}
+
+\paragraph{Experiencing high variance}
+
+\paragraph{Low training set size} $J_\text{train}(\Theta)$ will be low and $J_{cv}(\Theta)$ will be high.
+\paragraph{Large training set size} $J_\text{train}(\Theta)$ increases with training set size and $J_{cv}(\Theta)$ continues to decrease without leveling off. Also, $J_\text{train}(\Theta) < J_{cv}(\Theta)$ but the difference between them remains significant.
+
+If a learning algorithm is suffering from $\textbf{high variance}$, getting more training data is likely to help.
+
+\includegraphics[width = \textwidth]{NotePics/10_5_2.png}
+
+\subsection{Deciding What to Do Next Revisited}
+
+Our decision process can be broken down as follows:
+
+\paragraph{Getting more training examples} Fixes high variance
+\paragraph{Trying smaller sets of features} Fixes high variance
+\paragraph{Adding features} Fixes high bias
+\paragraph{Adding features} Fixes high bias
+\paragraph{Decreasing $\lambda$} Fixes high bias
+\paragraph{Increasing $\lambda$} Fixes high variance
+
+\paragraph{Diagnosing Neural Networks}
+
+\begin{itemize}
+\item[$\cdot$]A neural network with fewer parameters is $\textbf{prone to underfitting}$. It is also $\textbf{computationally cheaper}$.
+\item[$\cdot$]A large neural network with more parameters is $\textbf{prone to overfitting}$. It is also $\textbf{computationally expensive}$. In this case you can use regularization (increase ?) to address the overfitting.
+\end{itemize}
+
+Using a single hidden layer is a good starting default. You can train your neural network on a number of hidden layers using your cross validation set. You can then select the one that performs best.
+
+\paragraph{Model Complexity Effects}
+
+\begin{itemize}
+\item[$\cdot$]Lower-order polynomials (low model complexity) have high bias and low variance. In this case, the model fits poorly consistently.
+\item[$\cdot$]Higher-order polynomials (high model complexity) fit the training data extremely well and the test data extremely poorly. These have low bias on the training data, but very high variance.
+\item[$\cdot$]In reality, we would want to choose a model somewhere in between, that can generalize well but also fits the data reasonably well.
+\end{itemize}
+
+\newpage
+
+\section{Lecture 11}
+
+\subsection{Prioritizing What to Work On}
+
+\paragraph{System Design Example}
+
+Given a data set of emails, we could construct a vector for each email. Each entry in this vector represents a word. The vector normally contains 10,000 to 50,000 entries gathered by finding the most frequently used words in our data set. If a word is to be found in the email, we would assign its respective entry a 1, else if it is not found, that entry would be a 0. Once we have all our x vectors ready, we train our algorithm and finally, we could use it to classify if an email is a spam or not.
+
+\includegraphics[width = \textwidth]{NotePics/11_1_1.png}
+
+So how could you spend your time to improve the accuracy of this classifier?
+
+\begin{itemize}
+\item[$\cdot$]Collect lots of data (for example ``honeypot" project but doesn't always work)
+\item[$\cdot$]Develop sophisticated features (for example: using email header data in spam emails)
+\item[$\cdot$]Develop algorithms to process your input in different ways (recognizing misspellings in spam).
+\end{itemize}
+
+It is difficult to tell which of the options will be most helpful.
+
+\subsection{Error Analysis}
+
+The recommended approach to solving machine learning problems is to:
+
+\begin{itemize}
+\item[$\cdot$]Start with a simple algorithm, implement it quickly, and test it early on your cross validation data.
+\item[$\cdot$]Plot learning curves to decide if more data, more features, etc. are likely to help.
+\item[$\cdot$]Manually examine the errors on examples in the cross validation set and try to spot a trend where most of the errors were made.
+\end{itemize}
+
+For example, assume that we have 500 emails and our algorithm misclassifies a 100 of them. We could manually analyze the 100 emails and categorize them based on what type of emails they are. We could then try to come up with new cues and features that would help us classify these 100 emails correctly. Hence, if most of our misclassified emails are those which try to steal passwords, then we could find some features that are particular to those emails and add them to our model. We could also see how classifying each word according to its root changes our error rate:
+
+\includegraphics[width = \textwidth]{NotePics/11_2_1.png}
+
+It is very important to get error results as a single, numerical value. Otherwise it is difficult to assess your algorithm's performance. For example if we use stemming, which is the process of treating the same word with different forms (fail/failing/failed) as one word (fail), and get a $3\%$ error rate instead of $5\%$, then we should definitely add it to our model. However, if we try to distinguish between upper case and lower case letters and end up getting a $3.2\%$ error rate instead of $3\%$, then we should avoid using this new feature. Hence, we should try new things, get a numerical value for our error rate, and based on our result decide whether we want to keep the new feature or not.
+
+\newpage
 
 \end{document}
