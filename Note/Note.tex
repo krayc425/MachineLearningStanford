@@ -550,9 +550,9 @@ Instead, our cost function for logistic regression looks like:
 
 \[ J(\theta) = \dfrac{1}{m} \sum_{i=1}^m \mathrm{Cost}(h_\theta(x^{(i)}),y^{(i)}) \]
 
-\[ \mathrm{Cost}(h_\theta(x),y) = -\log(h_\theta(x)) \;  \text{if y = 1} \]
+\[ \mathrm{Cost}(h_\theta(x),y) = -\log(h_\theta(x)) \;  \text{if } y = 1 \]
 
-\[ \mathrm{Cost}(h_\theta(x),y) = -\log(1-h_\theta(x)) \;  \text{if y = 0} \]
+\[ \mathrm{Cost}(h_\theta(x),y) = -\log(1-h_\theta(x)) \;  \text{if } y = 0 \]
 
 When $y = 1$, we get the following plot for $J(\theta)$ vs $h_\theta(x)$:
 
@@ -739,7 +739,7 @@ The term $\frac{\lambda}{m}\theta_j$ performs our regularization. With some mani
 
 \[ \theta_j := \theta_j(1 - \alpha\frac{\lambda}{m}) - \alpha\frac{1}{m}\sum_{i=1}^m(h_\theta(x^{(i)}) - y^{(i)})x_j^{(i)} \]
 
-The first term in the above equation, $1??\frac{\lambda}{m}$ will always be less than 1. Intuitively you can see it as reducing the value of $\theta_j$ by some amount on every update. Notice that the second term is now exactly the same as it was before.
+The first term in the above equation, $1-\alpha\frac{\lambda}{m}$ will always be less than 1. Intuitively you can see it as reducing the value of $\theta_j$ by some amount on every update. Notice that the second term is now exactly the same as it was before.
 
 \paragraph{Normal Equation}
 
@@ -1183,8 +1183,8 @@ A hypothesis may have a low error for the training examples but still be inaccur
 The new procedure using these two sets is then:
 
 \begin{itemize}
-\item[{1.}]Learn $\Theta$ and minimize $J_{train}(\Theta)$ using the training set
-\item[{2.}]Compute the test set error $J_{test}(\Theta)$
+\item[{1.}]Learn $\Theta$ and minimize $J_{train}(\Theta)$ using the training set.
+\item[{2.}]Compute the test set error $J_{test}(\Theta)$.
 \end{itemize}
 
 \paragraph{The test set error}
@@ -1252,7 +1252,7 @@ The is summarized in the figure below:
 In the figure above, we see that as $\lambda$ increases, our fit becomes more rigid. On the other hand, as $\lambda$ approaches 0, we tend to over overfit the data. So how do we choose our parameter $\lambda$ to get it `just right' ? In order to choose the model and the regularization term $\lambda$, we need to:
 
 \begin{itemize}
-\item[{1.}]Create a list of lambdas (i.e. $\lambda\in\{0,0.01,0.02,0.04,0.08,0.16,0.32,0.64,1.28,2.56,5.12,10.24\}$);
+\item[{1.}]Create a list of lambdas (i.e. $\lambda\in\{0,0.01,0.02,0.04,0.08,0.16,0.32,0.64,1.28,2.56,5.12,10.24\}$).
 \item[{2.}]Create a set of models with different degrees or any other variants.
 \item[{3.}]Iterate through the $\lambda$s and for each $\lambda$ go through all the models to learn some $\Theta$.
 \item[{4.}]Compute the cross validation error using the learned $\Theta$ (computed with $\lambda$) on the $J_\text{cv}(\Theta)$ without regularization or $\lambda = 0$.
@@ -1352,7 +1352,5 @@ For example, assume that we have 500 emails and our algorithm misclassifies a 10
 \includegraphics[width = \textwidth]{NotePics/11_2_1.png}
 
 It is very important to get error results as a single, numerical value. Otherwise it is difficult to assess your algorithm's performance. For example if we use stemming, which is the process of treating the same word with different forms (fail/failing/failed) as one word (fail), and get a $3\%$ error rate instead of $5\%$, then we should definitely add it to our model. However, if we try to distinguish between upper case and lower case letters and end up getting a $3.2\%$ error rate instead of $3\%$, then we should avoid using this new feature. Hence, we should try new things, get a numerical value for our error rate, and based on our result decide whether we want to keep the new feature or not.
-
-\newpage
 
 \end{document}
