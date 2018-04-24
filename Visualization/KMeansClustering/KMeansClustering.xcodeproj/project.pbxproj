@@ -18,6 +18,8 @@
 		24DEAB85208C816800E0CBFD /* CGFloatExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DEAB84208C816800E0CBFD /* CGFloatExtensions.swift */; };
 		24DEAB87208C81AE00E0CBFD /* CGPointExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DEAB86208C81AE00E0CBFD /* CGPointExtensions.swift */; };
 		24DEAB89208C871000E0CBFD /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DEAB88208C871000E0CBFD /* UIViewControllerExtensions.swift */; };
+		24DEAB8B208CCCCB00E0CBFD /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DEAB8A208CCCCB00E0CBFD /* UIViewExtensions.swift */; };
+		24DEAB8D208D876100E0CBFD /* UIColorExtensiosns.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DEAB8C208D876100E0CBFD /* UIColorExtensiosns.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		24DEAB84208C816800E0CBFD /* CGFloatExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGFloatExtensions.swift; sourceTree = "<group>"; };
 		24DEAB86208C81AE00E0CBFD /* CGPointExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGPointExtensions.swift; sourceTree = "<group>"; };
 		24DEAB88208C871000E0CBFD /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
+		24DEAB8A208CCCCB00E0CBFD /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
+		24DEAB8C208D876100E0CBFD /* UIColorExtensiosns.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtensiosns.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +77,8 @@
 				24DEAB7E208C7A8400E0CBFD /* ClusterStatus.swift */,
 				24DEAB84208C816800E0CBFD /* CGFloatExtensions.swift */,
 				24DEAB86208C81AE00E0CBFD /* CGPointExtensions.swift */,
+				24DEAB8C208D876100E0CBFD /* UIColorExtensiosns.swift */,
+				24DEAB8A208CCCCB00E0CBFD /* UIViewExtensions.swift */,
 				24DEAB88208C871000E0CBFD /* UIViewControllerExtensions.swift */,
 				24DEAB70208C787900E0CBFD /* Main.storyboard */,
 				24DEAB73208C787A00E0CBFD /* Assets.xcassets */,
@@ -160,6 +166,8 @@
 				24DEAB87208C81AE00E0CBFD /* CGPointExtensions.swift in Sources */,
 				24DEAB6D208C787900E0CBFD /* AppDelegate.swift in Sources */,
 				24DEAB83208C801400E0CBFD /* CentroidView.swift in Sources */,
+				24DEAB8D208D876100E0CBFD /* UIColorExtensiosns.swift in Sources */,
+				24DEAB8B208CCCCB00E0CBFD /* UIViewExtensions.swift in Sources */,
 				24DEAB81208C7F9100E0CBFD /* ExampleView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

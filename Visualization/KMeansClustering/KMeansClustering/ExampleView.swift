@@ -10,23 +10,29 @@ import UIKit
 
 class ExampleView: UIView {
     
-    static let exampleViewWidth: CGFloat = 5.0
+    static let exampleViewWidth: CGFloat = 4.0
     
-    weak var cluster: CentroidView? {
+    weak var centroid: CentroidView? {
         didSet {
-            if let realCluster = cluster {
-                self.backgroundColor = realCluster.backgroundColor
+            if let realCluster = centroid {
+                UIView.animate(withDuration: animationDuration, animations: {
+                    self.backgroundColor = realCluster.color
+                })
             }
         }
     }
     
-    convenience init(boardWidth: Double) {
+    convenience init(boardWidth: Double, center: CGPoint?) {
         self.init(frame: CGRect(x: 0,
                                 y: 0,
                                 width: ExampleView.exampleViewWidth,
                                 height: ExampleView.exampleViewWidth))
-        self.center = CGPoint(x: drand48() * boardWidth,
-                              y: drand48() * boardWidth)
+        if center == nil {
+            self.center = CGPoint(x: drand48() * boardWidth,
+                                  y: drand48() * boardWidth)
+        } else {
+            self.center = center!
+        }
         self.backgroundColor = .black
         self.layer.cornerRadius = ExampleView.exampleViewWidth / 2.0
         self.layer.masksToBounds = true
